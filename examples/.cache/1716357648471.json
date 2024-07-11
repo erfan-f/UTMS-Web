@@ -1,0 +1,1 @@
+{"date":"2024-05-22T06:00:47.589Z","courseId":"17","assignment":"AP-Spring03-CA6","trace":{"content":"#include <string>\n\nconst std::string CMD_ARGUMENT_1 = \"id\";\nconst std::string CMD_ARGUMENT_2 = \"password\";","filename":"/home/erfan/Desktop/Project6/A6_1/arguments.hpp","identifier":"Save Document","languageId":"cpp","version":84,"lineCount":4},"failed":false}

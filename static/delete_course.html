@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>delete course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(30, 84, 102);
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+          .input-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .input-container input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            flex-grow: 1;
+        }
+    
+    </style>
+</head>
+<body>
+    <section style="background-color: rgb(250, 250, 250); padding: 1%; max-width: 300px; border-radius: 3px; margin: auto; ">
+        <div class="container">
+        <h2>Delete Course</h2>
+
+        <form action="/delete_course" method="post">
+	         <div class="input-container">
+            <input name = "course_id" type="text"  placeholder="Enter course id";>
+                  <input type="submit" style="display: block; width:20%; padding: 7px;" value="Submit" class = "container">
+                   </div>
+	 </form>
+    </div>
+    </section>
+</body>
+</html>

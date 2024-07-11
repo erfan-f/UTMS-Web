@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>offer new course</title>
+
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgb(30, 84, 102);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: rgb(216, 214, 214);
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    .button:hover {
+      background-color: rgb(190, 185, 185);
+    }
+
+    .upload-box {
+      position: relative;
+      width: 95px;
+      height: 50px;
+      padding: 10px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #555;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body style="text-align: center;">
+  <h1>Course Offer</h1>
+  <section style="background-color: rgb(253, 255, 255); padding: 1%; max-width: 300px; border-radius: 3px; margin: auto; ">
+    <h2>Course</h2>
+    <form action="/course_offer" method="post">
+      <input name="course_id" type="text" class="button" placeholder="course id" style="display: block; margin: auto;margin-bottom: 30px; padding: 5px; width: 94%;">
+      <input name="professor_id" type="text" class="button" placeholder="professor id" style="display: block; margin: auto; margin-bottom: 30px; padding: 5px; width: 94%;">
+      <input name="capacity" type="text" class="button" placeholder="capacity" style="display: block; margin: auto; margin-bottom: 30px; padding: 5px; width: 94%;">
+
+      <select id="day_of_week" name="day_of_week" type="text" class="button" style="width: 100%; color: gray">
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+      </select>
+
+      <div style="display: block; margin: auto; margin-bottom: 30px; width: 100%;">
+        <input name="start_time" id="start_time" type="number" class="button" placeholder="Start Time (1-24)" min="1" max="24" style="width: 45%; margin-top: 30px">
+        <input name="end_time" id="end_time" type="number" class="button" placeholder="End Time (1-24)" min="1" max="24" style="width: 45%;">
+      </div>
+
+      
+      <input id="exam_date" name="exam_date" type="text" class="button" placeholder="exam date (YYYY/MM/DD)" style="display: block; margin: auto; margin-bottom: 30px; padding: 5px; width: 94%;">
+      <input name="class_num" type="text" class="button" placeholder="class number" style="display: block; margin: auto; margin-bottom: 30px; padding: 5px; width: 94%;">
+      <input type="submit" style="display: block; width: 100%; padding: 7px;" value="Add" class="button">
+    </form>
+  </section>
+
+  <script>
+    const examDateInput = document.getElementById("exam_date");
+
+    examDateInput.addEventListener("input", (event) => {
+      const inputDate = event.target.value;
+      if (!isValidDate(inputDate)) {
+        event.target.setCustomValidity("Invalid date format. Please use the format YYYY/MM/DD.");
+      } else {
+        event.target.setCustomValidity("");
+      }
+    });
+
+    function isValidDate(date) {
+      const dateRegex = /^\d{4}\/\d{2}\/\d{2}$/;
+      return dateRegex.test(date);
+    }
+
+    function selectDay(button) {
+      const dayOfWeekInput = document.getElementById("day_of_week");
+      dayOfWeekInput.value = button.innerHTML;
+    }
+  </script>
+</body>
+
+</html>
